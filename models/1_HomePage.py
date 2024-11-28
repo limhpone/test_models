@@ -28,6 +28,7 @@
 #    st_lottie(lottie_hello,key="hello1", height=500, width=400)
 import requests
 import streamlit as st
+import os
 from streamlit_lottie import st_lottie
 from PIL import Image
 
@@ -44,12 +45,17 @@ def load_lottieurl(url):
 
 # Use local CSS
 def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    try:
+        abs_path = os.path.abspath(file_name)
+        if not os.path.exists(abs_path):
+            st.error(f"File not found: {abs_path}")
+            return
+        with open(abs_path) as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    except Exception as e:
+        st.error(f"Error loading CSS file: {e}")
 
-
-#local_css(".//styles//styles.css")
-os.path.join("styles", "styles.css")
+local_css("./styles/styles.css")
 
 
 # ---- LOAD ASSETS ----
