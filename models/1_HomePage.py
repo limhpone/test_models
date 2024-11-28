@@ -55,7 +55,7 @@ def local_css(file_name):
     except Exception as e:
         st.error(f"Error loading CSS file: {e}")
 
-local_css("./styles/styles.css")
+local_css(".models/styles/styles.css")
 
 
 # ---- LOAD ASSETS ----
