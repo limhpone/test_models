@@ -85,7 +85,7 @@ with st.container():
             
             Let your fitness journey start here!
             
-            [Click here to join us today!](https://www.facebook.com/profile.php?id=100068688709597)
+            #[Click here to join us today!](https://www.facebook.com/profile.php?id=100068688709597)
             
             Embark on a transformative experience that will enhance your physical and mental well-being. Let's build strength, resilience, and a healthier future together!
            
